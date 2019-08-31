@@ -40,7 +40,7 @@ class Login extends Component {
         }
       })
       .catch(function (error) {
-        if (error.length > 0) {
+        if (error) {
           let { data } = error.response;
           let temp = [];
           temp.push(data.data)

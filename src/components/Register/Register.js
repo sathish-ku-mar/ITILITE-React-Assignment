@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import axios from 'axios';
+import axios from '../../axios';
 import Login from '../Login/Login';
 
 class Register extends Component {
@@ -45,14 +45,14 @@ class Register extends Component {
         }
       })
       .catch(function (error) {
-        // if(error){ //
-      //   let { data } = error.response;
-      //   let temp = [];
-      //   temp.push(data.data)
-      //   self.setState({
-      //     errors: temp,
-      //   })
-      // }
+        if(error){ //
+        let { data } = error.response;
+        let temp = [];
+        temp.push(data.data)
+        self.setState({
+          errors: temp,
+        })
+      }
       });
   }
 
