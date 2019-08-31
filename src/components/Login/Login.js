@@ -17,13 +17,13 @@ class Login extends Component {
   }
 
   handleClick(event) {
-    var apiBaseUrl = "http://127.0.0.1:8000";
+
     var self = this;
     var payload = {
       "email": this.state.username,
       "password": this.state.password
     }
-    axios.post(apiBaseUrl + '/user/login/', payload)
+    axios.post('/user/login/', payload)
       .then(function (response) {
         console.log(response);
         if (response.data.statusCode == 200) {

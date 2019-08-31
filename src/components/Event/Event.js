@@ -55,7 +55,7 @@ class Event extends Component {
               style: { color: 'blue', textDecoration: 'underline' },
               events: {
                 onClick: (e, column, columnIndex, row, rowIndex) => {
-                  axios.delete('http://127.0.0.1:8000/event/book/' + row.id + '/', { headers: { Authorization: token } })
+                  axios.delete('/event/book/' + row.id + '/', { headers: { Authorization: token } })
                     .then(response => {
                       console.log('sucess');
                       self.props.callBack()

@@ -38,7 +38,7 @@ class Homescreen extends Component {
 
 
   eventHandleClick(event) {
-    axios.get('http://127.0.0.1:8000/event/book/', { headers: { Authorization: this.token } })
+    axios.get('/event/book/', { headers: { Authorization: this.token } })
       .then(response => {
         let event = { ...this.state.event };
         event.response = response.data.data;
@@ -60,7 +60,7 @@ class Homescreen extends Component {
 
   movieHandleClick(event) {
 
-    axios.get('http://127.0.0.1:8000/movie/book/', { headers: { Authorization: this.token } })
+    axios.get('/movie/book/', { headers: { Authorization: this.token } })
       .then(response => {
         let movie = { ...this.state.movie };
         movie.response = response.data.data;

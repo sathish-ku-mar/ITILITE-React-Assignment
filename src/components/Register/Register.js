@@ -19,7 +19,7 @@ class Register extends Component {
   }
 
   handleClick(event) {
-    var apiBaseUrl = "http://127.0.0.1:8000";
+    
     //To be done:check for empty values before hitting submit
     var self = this;
     var payload = {
@@ -28,7 +28,7 @@ class Register extends Component {
       "phone": this.state.phone,
       "password": this.state.password,
     }
-    axios.post(apiBaseUrl + '/user/signup/', payload)
+    axios.post('/user/signup/', payload)
       .then(function (response) {
         console.log(response);
         if (response.data.statusCode == 200) {

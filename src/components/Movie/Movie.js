@@ -63,7 +63,7 @@ class Movie extends Component {
                             deleteRow: true,
                             events: {
                                 onClick: (e, column, columnIndex, row, rowIndex) => {
-                                    axios.delete('http://127.0.0.1:8000/movie/book/' + row.id + '/', { headers: { Authorization: token } })
+                                    axios.delete('/movie/book/' + row.id + '/', { headers: { Authorization: token } })
                                         .then(response => {
                                             console.log('sucess');
                                             self.props.callBack()
